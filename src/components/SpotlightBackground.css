@@ -1,0 +1,36 @@
+/* Dot Background Logic */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 30px 30px;
+    /* Spotlight mask effect */
+    mask-image: radial-gradient(var(--spotlight-size) circle at var(--x, 50%) var(--y, 50%),
+            black 0%,
+            transparent 100%);
+    -webkit-mask-image: radial-gradient(var(--spotlight-size) circle at var(--x, 50%) var(--y, 50%),
+            black 0%,
+            transparent 100%);
+    opacity: 1;
+    pointer-events: none;
+    /* Allow clicks to pass through */
+    overflow: hidden;
+}
+
+/* Subtle always-visible dots */
+.background-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    overflow: hidden;
+}
